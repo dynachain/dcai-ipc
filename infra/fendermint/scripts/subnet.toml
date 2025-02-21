@@ -58,6 +58,7 @@ dependencies = [
     "cometbft-config",
     "fendermint-deps",
     "validator-config",
+    "snapshots-enable",
     "fendermint-start-validator",
     "cometbft-start",
     "cometbft-wait",
@@ -75,6 +76,9 @@ run_task = { name = [
     "cometbft-wait",
     "ethapi-start",
 ] }
+
+
+
 
 [tasks.child-fullnode-down]
 run_task = "testnode-down"

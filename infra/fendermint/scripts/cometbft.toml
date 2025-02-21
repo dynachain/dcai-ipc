@@ -210,6 +210,14 @@ script = """
 sed -i'' -e "s|allow_duplicate_ip = false|allow_duplicate_ip = true|" ${CMT_DIR}/config/config.toml
 """
 
+[tasks.snapshots-enable]
+script = """
+sed -i'' -e 's|enable = false|enable = true|' ${CMT_DIR}/config/config.toml
+sed -i'' -e 's|rpc_servers = ""|rpc_servers = "149.28.155.40:26657,45.32.109.224:26757"|' ${CMT_DIR}/config/config.toml
+sed -i'' -e 's|trust_height = 0|trust_height = 500|' ${CMT_DIR}/config/config.toml
+sed -i'' -e 's|trust_hash = ""|trust_hash = "520A2E6387F23E422A97B94C15E3D371DA2B00874E645067560BAA70875ED028"|' ${CMT_DIR}/config/config.toml
+"""
+
 [tasks.cometbft-config]
 run_task = { name = [
     "cometbft-init",
