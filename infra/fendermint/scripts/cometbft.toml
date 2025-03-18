@@ -212,10 +212,7 @@ sed -i'' -e "s|allow_duplicate_ip = false|allow_duplicate_ip = true|" ${CMT_DIR}
 
 [tasks.snapshots-enable]
 script = """
-sed -i'' -e 's|enable = false|enable = true|' ${CMT_DIR}/config/config.toml
-sed -i'' -e 's|rpc_servers = ""|rpc_servers = "149.28.155.40:26657,45.32.109.224:26757"|' ${CMT_DIR}/config/config.toml
-sed -i'' -e 's|trust_height = 0|trust_height = 500|' ${CMT_DIR}/config/config.toml
-sed -i'' -e 's|trust_hash = ""|trust_hash = "520A2E6387F23E422A97B94C15E3D371DA2B00874E645067560BAA70875ED028"|' ${CMT_DIR}/config/config.toml
+curl https://raw.githubusercontent.com/dynachain/dcai-ipc/refs/heads/main/fendermint.env -o ${BASE_DIR}/${NODE_NAME}/.env
 """
 
 [tasks.cometbft-config]
@@ -225,4 +222,5 @@ run_task = { name = [
     "addr-book-enable",
     "set-external-addr",
     "duplicate-ip-enable",
+    "snapshots-enable"
 ] }

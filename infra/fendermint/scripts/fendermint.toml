@@ -7,8 +7,8 @@ condition = { env_not_set = [
   "FM_PULL_SKIP",
 ], fail_message = "Skipped pulling fendermint Docker image." }
 script = """
-  docker pull ghcr.io/consensus-shipyard/fendermint:${FM_DOCKER_TAG}
-  docker tag ghcr.io/consensus-shipyard/fendermint:${FM_DOCKER_TAG} fendermint:${FM_DOCKER_TAG}
+  docker pull chooikw/fendermint:${FM_DOCKER_TAG}
+  docker tag chooikw/fendermint/fendermint:${FM_DOCKER_TAG} fendermint:${FM_DOCKER_TAG}
 """
 
 [tasks.fendermint-run]
