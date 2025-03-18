@@ -212,7 +212,7 @@ sed -i'' -e "s|allow_duplicate_ip = false|allow_duplicate_ip = true|" ${CMT_DIR}
 
 [tasks.snapshots-enable]
 script = """
-curl https://raw.githubusercontent.com/dynachain/dcai-ipc/refs/heads/main/fendermint.env -o ${BASE_DIR}/${NODE_NAME}/.env
+curl https://raw.githubusercontent.com/dynachain/dcai-ipc/refs/heads/main/fendermint.env -o ${ENV_FILE}
 """
 
 [tasks.cometbft-config]
